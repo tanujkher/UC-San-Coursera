@@ -1,25 +1,37 @@
+import java.util.*;
+
 public class MaxPairwiseProduct{
     public static void main(String[] args) {
-        while(true){
-            int n = (int)(Math.random() * 10) + 2;
-            long[] arr = new long[n];
-            for(int i = 0; i <= arr.length - 1; i++){
-                arr[i] = (int)(Math.random() * 100);
-            }
-            for(long val : arr){
-                System.out.print(val + " ");
-            }
-            System.out.println();
-            long na = Naive(arr);
-            long mod = FindMaxProduct(arr);
-            System.out.println(na + " " + mod);
-            if(na != mod){
-                System.out.println("Wrong answer");
-                break;
-            }else{
-                System.out.println("OK");
-            }
+        // int counter = 0; // counter to not go to infinity in real testing we use while true
+        // while(counter != 1000){
+        //     int n = (int)(Math.random() * 10) + 2;
+        //     long[] arr = new long[n];
+        //     for(int i = 0; i <= arr.length - 1; i++){
+        //         arr[i] = (int)(Math.random() * 100);
+        //     }
+        //     for(long val : arr){
+        //         System.out.print(val + " ");
+        //     }
+        //     System.out.println();
+        //     long na = Naive(arr);
+        //     long mod = FindMaxProduct(arr);
+        //     System.out.println(na + " " + mod);
+        //     if(na != mod){
+        //         System.out.println("Wrong answer");
+        //         break;
+        //     }else{
+        //         System.out.println("OK");
+        //     }
+        //     counter++;
+        // }
+        Scanner scn = new Scanner(System.in);
+        int n = scn.nextInt();
+        long[] arr = new long[n];
+        for(int i = 0; i <= arr.length - 1; i++){
+            arr[i] = scn.nextLong();
         }
+        System.out.println(Naive(arr));
+        System.out.println(FindMaxProduct(arr));
     }
 
     private static long Naive(long[] arr){
