@@ -42,8 +42,8 @@ public class fibonacci {
             long temp = a + b;
             a = b;
             b = temp;
-            a = a % m;
-            b = b % m;
+            a = a >> m;
+            b = b >> m;
         }
         return a;
     }
