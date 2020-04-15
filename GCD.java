@@ -2,7 +2,7 @@ import java.util.*;
 
 public class GCD {
   // private static int gcd(int a, int b) {
-  //   int n = Math.min(a, b);
+  //   int n = a + b;
   //   int ans = 1;
   //   for(int i = 2; i <= n; i++){
   //     if(a % i == 0 && b % i == 0){
@@ -12,9 +12,9 @@ public class GCD {
   //   return ans;
   // }
 
-  private static int gcd(int a, int b){
+  private static long gcd(long a, long b){
     while(a % b != 0){
-      int temp = a % b;
+      long temp = a % b;
       a = b;
       b = temp;
     }
@@ -23,9 +23,9 @@ public class GCD {
 
   public static void main(String args[]) {
     Scanner scn = new Scanner(System.in);
-    int a = scn.nextInt();
-    int b = scn.nextInt();
-    System.out.println(gcd(a, b));
+    long a = scn.nextInt();
+    long b = scn.nextInt();
+    System.out.println((a * b) / gcd(a, b));
     scn.close();
   }
 }
