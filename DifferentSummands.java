@@ -3,7 +3,16 @@ import java.util.*;
 public class DifferentSummands {
     private static List<Integer> optimalSummands(int n) {
         List<Integer> summands = new ArrayList<Integer>();
-        //write your code here
+        int i = 1;
+        while(n != 0 && i <= n){
+            if(n - i <= i){
+                summands.add(n);
+                break;
+            }
+            summands.add(i);
+            n = n - i;
+            i++;
+        }
         return summands;
     }
     
