@@ -9,7 +9,19 @@ public class MajorityElement {
         if (left + 1 == right) {
             return a[left];
         }
-        //write your code here
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int val : a){
+            if(map.containsKey(val)){
+                map.put(val, map.get(val) + 1);
+            }else{
+                map.put(val, 1);
+            }
+        }
+        for(int val : map.keySet()){
+            if(map.get(val) > a.length / 2){
+                return 1;
+            }
+        }
         return -1;
     }
 

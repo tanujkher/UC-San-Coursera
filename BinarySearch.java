@@ -4,9 +4,18 @@ import java.util.*;
 public class BinarySearch {
 
     static int binarySearch(int[] a, int x) {
-        int left = 0, right = a.length;
-        //write your code here
-
+        int lo = 0;
+        int hi = a.length - 1;
+        while(lo <= hi){
+            int mid = (lo + hi) / 2;
+            if(a[mid] < x){
+                lo = mid + 1;
+            }else if(a[mid] > x){
+                hi = mid - 1;
+            }else{
+                return mid;
+            }
+        }
         return -1;
     }
 
@@ -30,8 +39,7 @@ public class BinarySearch {
           b[i] = scanner.nextInt();
         }
         for (int i = 0; i < m; i++) {
-            //replace with the call to binarySearch when implemented
-            System.out.print(linearSearch(a, b[i]) + " ");
+            System.out.print(binarySearch(a, b[i]) + " ");
         }
     }
     static class FastScanner {
