@@ -5,23 +5,13 @@ import static java.lang.Math.*;
 
 public class Closest {
 
-    static class Point implements Comparable<Point> {
-        long x, y;
-
-        public Point(long x, long y) {
-            this.x = x;
-            this.y = y;
-        }
-
-        @Override
-        public int compareTo(Point o) {
-            return o.y == y ? Long.signum(x - o.x) : Long.signum(y - o.y);
-        }
-    }
-
     static double minimalDistance(int[] x, int y[]) {
         double ans = Double.POSITIVE_INFINITY;
-        //write your code here
+        for(int i = 0; i <= x.length - 1; i++){
+            for(int j = i + 1; j <= x.length - 1; j++){
+                ans = Math.min(ans, Math.sqrt((x[i] - x[j]) * (x[i] - x[j]) + (y[i] - y[j]) * (y[i] - y[j])));
+            }
+        }
         return ans;
     }
 
